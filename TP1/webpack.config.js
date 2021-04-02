@@ -4,6 +4,9 @@ const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html", 
   filename: "./index.html"
 });
+const ESLintPlugin = require('eslint-webpack-plugin');
+
+
 module.exports = (env, argv) => {
   console.log(argv.mode);
   return {
@@ -12,14 +15,14 @@ module.exports = (env, argv) => {
       path: path.join(__dirname, 'dist'),
       filename: "[name].js"
     }, // NEW Ends
-    plugins: [htmlPlugin],
+    plugins: [htmlPlugin, new ESLintPlugin({})],
     module: {
       rules: [
         {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
+          loader: "babel-loader",
         }
       },
       {
