@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import LOGO from '../static/Logo.jpg';
+
 const Index = () => {
-  return <div>TIW 8 TP1!</div>;
+  return <div>YassineAMG
+  	<img src={LOGO} alt="Logo" />
+  </div>;
 };
 ReactDOM.render(<Index />, document.getElementById('root'));
