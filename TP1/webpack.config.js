@@ -16,6 +16,7 @@ module.exports = (env, argv) => {
       filename: "[name].js"
     }, // NEW Ends
     plugins: [htmlPlugin, new ESLintPlugin({})],
+    mode: 'development',
     module: {
       rules: [
         {
